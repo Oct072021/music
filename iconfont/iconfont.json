@@ -1,0 +1,16 @@
+{
+  "id": "3455940",
+  "name": "00",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "35938155",
+      "name": "元颗粒13",
+      "font_class": "list-checksvg",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    }
+  ]
+}

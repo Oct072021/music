@@ -1,4 +1,11 @@
 /**
+ * 实现思路：页面布局（HTML + CSS) => 逻辑控制 => 从数据入手（lrc），格式解析（字符串 -> 对象数组） => 
+ *          观察到audio标签的currentTime属性的值为‘秒’，因此把歌词对象数组的time属性变为‘秒’ => 使用溢出隐藏 + translate思路 => 
+ *          控制歌词DOM节点偏移 => 找到当前播放时间对应的歌词,根据时间对应歌词完成歌词滚动效果
+ */
+
+
+/**
  * 将字符串格式的歌词转换为对象数组格式
  * @returns {Array} 歌词-对象数组格式
  */
@@ -19,6 +26,7 @@ const parseLrc = () => {
 
 /**
  * 将一个时间字符串解析为数字（秒）
+ * 原因：audio标签currentTime属性的值为 秒
  * @param {String} t 时间
  * @returns {Number} 时间
  */
@@ -29,12 +37,6 @@ const parseTime = (t) => {
 }
 
 const lrcArr = parseLrc()
-
-const doms = {
-  audio: document.querySelector('audio'),
-  ul: document.querySelector('.container ul'),
-  container: document.querySelector('.container')
-}
 
 /**
  * 找到当前播放器时间应该显示的歌词
